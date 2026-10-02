@@ -12,9 +12,7 @@
 }
 
 
-/* =========================================================
-   RESET / GLOBAL
-   ========================================================= */
+/* GLOBAL */
 
 * {
   box-sizing: border-box;
@@ -40,26 +38,18 @@ img {
   max-width: 100%;
 }
 
-a {
-  color: inherit;
-}
-
 p,
 h1,
-h2,
-h3 {
+h2 {
   overflow-wrap: break-word;
 }
 
 
-/* =========================================================
-   SHARED HEADER
-   ========================================================= */
+/* HEADER */
 
 .site-header {
   width: min(1180px, calc(100% - 40px));
   min-height: 76px;
-
   margin: 0 auto;
 
   display: flex;
@@ -70,8 +60,6 @@ h3 {
 }
 
 .site-brand {
-  flex-shrink: 0;
-
   color: var(--ink);
   text-decoration: none;
 
@@ -83,7 +71,6 @@ h3 {
 .site-nav {
   display: flex;
   align-items: center;
-
   gap: 26px;
 }
 
@@ -100,9 +87,218 @@ h3 {
 }
 
 
-/* =========================================================
-   SHARED FOOTER
-   ========================================================= */
+/* BUTTONS */
+
+.home-primary-button,
+.home-secondary-button {
+  display: inline-block;
+
+  padding: 14px 23px;
+  border-radius: 999px;
+
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.home-primary-button {
+  background: var(--rust);
+  color: white;
+}
+
+.home-primary-button:hover {
+  background: var(--rust-dark);
+  transform: translateY(-2px);
+}
+
+.home-secondary-button {
+  border: 1px solid rgba(41, 36, 31, 0.25);
+
+  background: transparent;
+  color: var(--ink);
+}
+
+.home-secondary-button:hover {
+  background: var(--paper);
+  transform: translateY(-2px);
+}
+
+
+/* SMALL HEADING */
+
+.home-kicker {
+  margin: 0 0 16px;
+
+  color: var(--rust);
+
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+
+/* HOMEPAGE HERO */
+
+.home-hero {
+  width: min(1180px, calc(100% - 56px));
+  min-height: 670px;
+
+  margin: 0 auto;
+  padding: 75px 0 105px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+
+  gap: 80px;
+  align-items: center;
+}
+
+.home-hero-copy {
+  min-width: 0;
+}
+
+.home-hero h1 {
+  max-width: 700px;
+
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: clamp(3.2rem, 5.4vw, 5.6rem);
+  font-weight: 600;
+
+  line-height: 1.01;
+  letter-spacing: -0.04em;
+}
+
+.home-intro {
+  max-width: 570px;
+
+  margin: 28px 0 32px;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.home-hero-art {
+  position: relative;
+
+  min-height: 470px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-hero-circle {
+  position: absolute;
+
+  width: 390px;
+  height: 390px;
+  max-width: 90%;
+
+  border-radius: 50%;
+  background: var(--yellow);
+}
+
+.home-hero-art img {
+  position: relative;
+
+  width: min(400px, 85%);
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border: 10px solid var(--paper);
+
+  box-shadow:
+    0 25px 60px rgba(65, 46, 31, 0.18);
+
+  transform: rotate(2deg);
+}
+
+
+/* FEATURED BOOK */
+
+.home-featured-book {
+  padding: 110px max(28px, calc((100vw - 1120px) / 2));
+
+  background: var(--paper);
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+
+  gap: 85px;
+  align-items: center;
+}
+
+.featured-book-image {
+  display: flex;
+  justify-content: center;
+}
+
+.featured-book-image img {
+  width: min(390px, 100%);
+  height: auto;
+
+  box-shadow:
+    16px 16px 0 var(--yellow),
+    0 20px 50px rgba(65, 46, 31, 0.12);
+}
+
+.featured-book-copy {
+  max-width: 610px;
+}
+
+.featured-book-copy h2 {
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 4.5vw, 4.8rem);
+  font-weight: 600;
+
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.featured-book-copy h2 span {
+  color: var(--rust);
+}
+
+.featured-book-byline {
+  margin: 20px 0 0;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+}
+
+.featured-book-description {
+  max-width: 540px;
+
+  margin: 26px 0 30px;
+
+  color: var(--muted);
+
+  font-size: 1.03rem;
+  line-height: 1.75;
+}
+
+.featured-book-buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+
+/* FOOTER */
 
 .site-footer {
   padding: 42px 20px;
@@ -148,345 +344,7 @@ h3 {
 }
 
 
-/* =========================================================
-   SHARED HOMEPAGE ELEMENTS
-   ========================================================= */
-
-.home-kicker {
-  margin: 0 0 16px;
-
-  color: var(--rust);
-
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.17em;
-  text-transform: uppercase;
-}
-
-.home-primary-button,
-.home-secondary-button {
-  display: inline-block;
-
-  padding: 14px 23px;
-
-  border-radius: 999px;
-
-  text-decoration: none;
-  font-size: 0.92rem;
-  font-weight: 600;
-
-  transition:
-    transform 0.18s ease,
-    background 0.18s ease;
-}
-
-.home-primary-button {
-  background: var(--rust);
-  color: white;
-}
-
-.home-primary-button:hover {
-  background: var(--rust-dark);
-  transform: translateY(-2px);
-}
-
-.home-secondary-button {
-  border: 1px solid rgba(41, 36, 31, 0.25);
-
-  background: transparent;
-  color: var(--ink);
-}
-
-.home-secondary-button:hover {
-  background: var(--paper);
-  transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   HOMEPAGE HERO
-   ========================================================= */
-
-.home-hero {
-  width: min(1180px, calc(100% - 56px));
-
-  min-height: 680px;
-
-  margin: 0 auto;
-  padding: 80px 0 110px;
-
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-
-  gap: 80px;
-  align-items: center;
-}
-
-.home-hero-copy {
-  min-width: 0;
-}
-
-.home-hero h1 {
-  max-width: 700px;
-
-  margin: 0;
-
-  font-family: var(--serif);
-  font-size: clamp(3.2rem, 5.4vw, 5.6rem);
-  font-weight: 600;
-
-  line-height: 1.01;
-  letter-spacing: -0.04em;
-}
-
-.home-intro {
-  max-width: 580px;
-
-  margin: 28px 0 32px;
-
-  color: var(--muted);
-
-  font-size: 1.08rem;
-  line-height: 1.75;
-}
-
-
-/* HERO ART */
-
-.home-hero-art {
-  position: relative;
-
-  min-height: 470px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.home-hero-circle {
-  position: absolute;
-
-  width: 390px;
-  height: 390px;
-  max-width: 90%;
-
-  border-radius: 50%;
-
-  background: var(--yellow);
-}
-
-.home-hero-art img {
-  position: relative;
-
-  width: min(400px, 85%);
-  aspect-ratio: 1 / 1;
-
-  object-fit: cover;
-
-  border: 10px solid var(--paper);
-
-  box-shadow:
-    0 25px 60px rgba(65, 46, 31, 0.18);
-
-  transform: rotate(2deg);
-}
-
-
-/* =========================================================
-   FEATURED BOOK
-   ========================================================= */
-
-.home-featured-book {
-  padding: 110px max(28px, calc((100vw - 1120px) / 2));
-
-  background: var(--paper);
-
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-
-  gap: 85px;
-  align-items: center;
-}
-
-.featured-book-image {
-  display: flex;
-  justify-content: center;
-}
-
-.featured-book-image img {
-  width: min(430px, 100%);
-  height: auto;
-
-  box-shadow:
-    18px 18px 0 var(--yellow),
-    0 20px 50px rgba(65, 46, 31, 0.12);
-}
-
-.featured-book-copy {
-  max-width: 610px;
-}
-
-.featured-book-copy h2 {
-  margin: 0;
-
-  font-family: var(--serif);
-  font-size: clamp(2.8rem, 4.5vw, 4.8rem);
-  font-weight: 600;
-
-  line-height: 1.02;
-  letter-spacing: -0.04em;
-}
-
-.featured-book-copy h2 span {
-  color: var(--rust);
-}
-
-.featured-book-byline {
-  margin: 20px 0 0;
-
-  color: var(--muted);
-
-  font-size: 0.9rem;
-}
-
-.featured-book-description {
-  max-width: 540px;
-
-  margin: 26px 0 30px;
-
-  color: var(--muted);
-
-  font-size: 1.05rem;
-  line-height: 1.75;
-}
-
-.featured-book-buttons {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 14px;
-}
-
-
-/* =========================================================
-   ARTWORK STRIP
-   ========================================================= */
-
-.home-art-strip {
-  padding: 90px 5vw;
-
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  gap: 22px;
-}
-
-.home-art-strip img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-
-  object-fit: cover;
-
-  box-shadow:
-    0 12px 32px rgba(43, 35, 28, 0.1);
-}
-
-.home-art-strip img:nth-child(2) {
-  transform: translateY(28px);
-}
-
-
-/* =========================================================
-   MORE FROM PLAYFUL BIBLE
-   ========================================================= */
-
-.home-more {
-  width: min(1060px, calc(100% - 56px));
-
-  margin: 0 auto;
-  padding: 100px 0 120px;
-}
-
-.home-more-heading {
-  margin-bottom: 42px;
-
-  text-align: center;
-}
-
-.home-more-heading h2 {
-  margin: 0;
-
-  font-family: var(--serif);
-  font-size: clamp(2.8rem, 5vw, 4.7rem);
-  font-weight: 600;
-
-  letter-spacing: -0.04em;
-}
-
-.home-more-links {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  gap: 20px;
-}
-
-.home-more-card {
-  min-height: 180px;
-
-  padding: 30px;
-
-  display: flex;
-  flex-direction: column;
-
-  border: 1px solid rgba(41, 36, 31, 0.12);
-
-  background: var(--paper);
-  color: var(--ink);
-
-  text-decoration: none;
-
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease;
-}
-
-.home-more-card:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 14px 34px rgba(43, 35, 28, 0.09);
-}
-
-.home-more-label {
-  margin-bottom: 14px;
-
-  color: var(--rust);
-
-  font-size: 0.73rem;
-  font-weight: 700;
-
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.home-more-card strong {
-  font-family: var(--serif);
-  font-size: 1.65rem;
-  font-weight: 600;
-}
-
-.home-more-arrow {
-  margin-top: auto;
-
-  color: var(--rust);
-
-  font-size: 1.5rem;
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* TABLET */
 
 @media (max-width: 950px) {
 
@@ -494,63 +352,34 @@ h3 {
     width: min(88vw, 720px);
     min-height: 0;
 
-    padding: 65px 0 90px;
+    padding: 60px 0 85px;
 
     grid-template-columns: 1fr;
 
     gap: 55px;
   }
 
-  .home-hero-copy {
-    order: 1;
-  }
-
   .home-hero-art {
-    order: 2;
-
-    min-height: 430px;
+    min-height: 420px;
   }
-
-  .home-hero h1 {
-    max-width: 100%;
-  }
-
 
   .home-featured-book {
     padding: 90px max(30px, 8vw);
 
     grid-template-columns: 1fr;
 
-    gap: 65px;
-  }
-
-  .featured-book-image {
-    order: 1;
+    gap: 60px;
   }
 
   .featured-book-copy {
-    order: 2;
-
     max-width: 700px;
   }
-
-
-  .home-art-strip {
-    padding: 75px 4vw;
-
-    gap: 15px;
-  }
-
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* MOBILE */
 
 @media (max-width: 700px) {
-
-  /* HEADER */
 
   .site-header {
     width: calc(100% - 28px);
@@ -570,18 +399,16 @@ h3 {
   }
 
 
-  /* HERO */
-
   .home-hero {
     width: calc(100% - 30px);
 
-    padding: 45px 0 70px;
+    padding: 42px 0 68px;
 
-    gap: 42px;
+    gap: 40px;
   }
 
   .home-hero h1 {
-    font-size: clamp(2.6rem, 11.5vw, 3.5rem);
+    font-size: clamp(2.55rem, 11.5vw, 3.5rem);
 
     line-height: 1.02;
   }
@@ -593,16 +420,8 @@ h3 {
     line-height: 1.65;
   }
 
-  .home-primary-button,
-  .home-secondary-button {
-    padding: 13px 20px;
-  }
-
-
-  /* HERO ART */
-
   .home-hero-art {
-    min-height: 340px;
+    min-height: 330px;
   }
 
   .home-hero-circle {
@@ -619,16 +438,14 @@ h3 {
   }
 
 
-  /* FEATURED BOOK */
-
   .home-featured-book {
-    padding: 75px 18px;
+    padding: 72px 18px;
 
-    gap: 48px;
+    gap: 46px;
   }
 
   .featured-book-image img {
-    width: min(82vw, 380px);
+    width: min(78vw, 340px);
 
     box-shadow:
       11px 11px 0 var(--yellow),
@@ -636,7 +453,7 @@ h3 {
   }
 
   .featured-book-copy h2 {
-    font-size: clamp(2.6rem, 11vw, 3.6rem);
+    font-size: clamp(2.55rem, 11vw, 3.6rem);
   }
 
   .featured-book-description {
@@ -654,50 +471,6 @@ h3 {
   }
 
 
-  /* ART STRIP */
-
-  .home-art-strip {
-    padding: 60px 12px;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 10px;
-  }
-
-  .home-art-strip img:first-child {
-    grid-column: span 2;
-  }
-
-  .home-art-strip img:nth-child(2) {
-    transform: none;
-  }
-
-
-  /* MORE */
-
-  .home-more {
-    width: calc(100% - 30px);
-
-    padding: 75px 0 90px;
-  }
-
-  .home-more-heading {
-    margin-bottom: 30px;
-  }
-
-  .home-more-links {
-    grid-template-columns: 1fr;
-  }
-
-  .home-more-card {
-    min-height: 150px;
-
-    padding: 24px;
-  }
-
-
-  /* FOOTER */
-
   .site-footer {
     padding: 34px 18px;
   }
@@ -705,13 +478,10 @@ h3 {
   .footer-links {
     gap: 16px;
   }
-
 }
 
 
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
+/* VERY SMALL PHONES */
 
 @media (max-width: 400px) {
 
@@ -724,11 +494,11 @@ h3 {
   }
 
   .home-hero h1 {
-    font-size: 2.55rem;
+    font-size: 2.5rem;
   }
 
   .featured-book-copy h2 {
-    font-size: 2.55rem;
+    font-size: 2.5rem;
   }
-
 }
+
