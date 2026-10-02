@@ -928,3 +928,91 @@ h2 {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   404 PAGE
+   ========================================================= */
+
+.not-found-page {
+  width: min(760px, calc(100% - 40px));
+  min-height: 65vh;
+
+  margin: 0 auto;
+  padding: 110px 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.not-found-page h1 {
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-weight: 600;
+
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.not-found-page > p:not(.home-kicker) {
+  margin: 28px auto 34px;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.not-found-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+@media (max-width: 700px) {
+
+  .not-found-page {
+    width: calc(100% - 30px);
+    min-height: 60vh;
+    padding: 80px 0;
+  }
+
+  .not-found-buttons {
+    flex-direction: column;
+  }
+
+  .not-found-buttons a {
+    width: 100%;
+  }
+}
+
