@@ -271,24 +271,39 @@ h1 span {
 
 /* FOOTER */
 
-footer {
-  padding: 45px 20px;
-
+.site-footer {
+  padding: 42px 20px;
   text-align: center;
-
   background: var(--ink);
   color: #eee8df;
 }
 
-footer p {
-  margin: 4px 0;
-
-  font-size: 0.87rem;
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-bottom: 18px;
 }
 
-.copyright {
-  color: #aaa198;
+.footer-links a {
+  color: #eee8df;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
 
+.footer-links a:hover {
+  color: var(--yellow);
+}
+
+.site-footer p {
+  margin: 4px 0;
+  font-size: 0.85rem;
+}
+
+.site-footer .copyright {
+  color: #aaa198;
   font-size: 0.76rem;
 }
 
