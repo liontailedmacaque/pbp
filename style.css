@@ -574,6 +574,19 @@ footer p {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================================================
    FULL NEBUCHADNEZZAR BOOK PAGE
    ========================================================= */
@@ -586,24 +599,30 @@ footer p {
 /* NAVIGATION */
 
 .book-nav {
-  width: min(1200px, calc(100% - 48px));
-  min-height: 82px;
+  width: min(1200px, calc(100% - 40px));
+  min-height: 78px;
   margin: 0 auto;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
+}
+
+.book-nav .brand {
+  flex-shrink: 0;
 }
 
 .book-nav nav {
   display: flex;
-  gap: 28px;
+  align-items: center;
+  gap: 24px;
 }
 
 .book-nav nav a {
   color: var(--ink);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
 }
 
@@ -611,12 +630,32 @@ footer p {
   color: var(--rust);
 }
 
+.top-buy-button {
+  flex-shrink: 0;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  background: var(--rust);
+  color: white;
+
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.top-buy-button:hover {
+  background: #803426;
+}
+
 
 /* TITLE PAGE */
 
 .book-title-page {
-  min-height: 80vh;
-  padding: 100px 24px;
+  min-height: 76vh;
+  padding: 90px 24px;
 
   display: flex;
   flex-direction: column;
@@ -627,11 +666,11 @@ footer p {
 }
 
 .book-kicker {
-  margin: 0 0 20px;
+  margin: 0 0 18px;
 
   color: var(--rust);
 
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -639,9 +678,10 @@ footer p {
 
 .book-title-page h1 {
   max-width: 950px;
+  margin: 0;
 
-  font-size: clamp(3.7rem, 8vw, 8rem);
-  line-height: 0.95;
+  font-size: clamp(3.6rem, 7vw, 7rem);
+  line-height: 0.96;
 }
 
 .book-title-page h1 span {
@@ -649,39 +689,37 @@ footer p {
 }
 
 .book-byline {
-  margin-top: 30px;
+  margin-top: 26px;
 
   color: var(--muted);
-
-  font-size: 1rem;
+  font-size: 0.98rem;
 }
 
 .book-scroll-mark {
-  margin-top: 55px;
+  margin-top: 45px;
 
   color: var(--rust);
-
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 
 /* STORY SPREADS */
 
 .story-spread {
-  width: min(1200px, calc(100% - 60px));
-  min-height: 720px;
+  width: min(1160px, calc(100% - 56px));
+  min-height: 650px;
 
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 82px 0;
 
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 100px;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 72px;
   align-items: center;
 }
 
 .story-spread.reverse {
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
 }
 
 .story-spread.reverse .story-text {
@@ -702,24 +740,26 @@ footer p {
   object-fit: cover;
 
   box-shadow:
-    0 24px 60px rgba(65, 46, 31, 0.16);
+    0 20px 48px rgba(65, 46, 31, 0.14);
 }
 
 
 /* STORY TEXT */
 
 .story-text {
-  max-width: 500px;
+  width: 100%;
+  max-width: 470px;
+  min-width: 0;
 
   font-family: var(--serif);
-  font-size: clamp(1.55rem, 2.5vw, 2.35rem);
-  line-height: 1.55;
+  font-size: clamp(1.22rem, 1.65vw, 1.75rem);
+  line-height: 1.48;
 
   color: var(--ink);
 }
 
 .story-text p {
-  margin: 0 0 30px;
+  margin: 0 0 22px;
 }
 
 .story-text p:last-child {
@@ -729,20 +769,20 @@ footer p {
 .story-text .big-line {
   color: var(--rust);
 
-  font-size: 1.4em;
+  font-size: 1.35em;
   font-weight: 700;
 }
 
 .story-text.boast {
   color: var(--rust);
 
-  font-size: clamp(2rem, 3.8vw, 3.8rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.7rem);
   font-weight: 600;
-  line-height: 1.35;
+  line-height: 1.28;
 }
 
 
-/* ALTERNATING BACKGROUND SECTIONS */
+/* ALTERNATING BACKGROUND */
 
 .story-spread:nth-of-type(even) {
   position: relative;
@@ -754,8 +794,8 @@ footer p {
   position: absolute;
   z-index: -1;
 
-  top: 30px;
-  bottom: 30px;
+  top: 24px;
+  bottom: 24px;
 
   left: calc((100vw - 100%) / -2);
   right: calc((100vw - 100%) / -2);
@@ -767,43 +807,42 @@ footer p {
 /* END PAGE */
 
 .book-end {
-  max-width: 760px;
+  max-width: 740px;
 
-  margin: 80px auto 120px;
-  padding: 90px 45px;
+  margin: 70px auto 110px;
+  padding: 76px 40px;
 
   text-align: center;
 
   background: #fffdf8;
 
   box-shadow:
-    0 18px 50px rgba(64, 46, 31, 0.08);
+    0 16px 42px rgba(64, 46, 31, 0.08);
 }
 
 .book-end h2 {
-  margin: 0 0 32px;
+  margin: 0 0 28px;
 
   font-family: var(--serif);
-  font-size: clamp(2.7rem, 5vw, 4.7rem);
+  font-size: clamp(2.5rem, 4.5vw, 4.3rem);
   line-height: 1;
 }
 
 .book-end > p {
-  max-width: 590px;
-  margin: 18px auto;
+  max-width: 570px;
+  margin: 16px auto;
 
   color: var(--muted);
-
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
 .book-end .buy-button {
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .book-credits {
-  margin-top: 65px;
-  padding-top: 30px;
+  margin-top: 58px;
+  padding-top: 28px;
 
   border-top: 1px solid rgba(41, 36, 31, 0.15);
 
@@ -820,21 +859,21 @@ footer p {
 
 @media (max-width: 950px) {
 
+  .book-nav {
+    width: calc(100% - 32px);
+  }
+
   .story-spread,
   .story-spread.reverse {
     width: min(88vw, 700px);
+    min-height: 0;
 
     grid-template-columns: 1fr;
 
-    gap: 50px;
+    gap: 42px;
 
-    padding: 80px 0;
+    padding: 72px 0;
   }
-
-  /*
-    On tablet:
-    image first, then text
-  */
 
   .story-spread .story-text,
   .story-spread.reverse .story-text {
@@ -859,18 +898,23 @@ footer p {
 
 @media (max-width: 700px) {
 
-  /* NAV */
+  .book-page {
+    overflow-x: hidden;
+  }
 
   .book-nav {
-    width: calc(100% - 32px);
-    min-height: 68px;
+    width: calc(100% - 28px);
+    min-height: 64px;
+
+    gap: 12px;
   }
 
   .book-nav nav {
-    gap: 14px;
+    display: none;
   }
 
-  .book-nav nav a {
+  .top-buy-button {
+    padding: 9px 13px;
     font-size: 0.76rem;
   }
 
@@ -878,13 +922,25 @@ footer p {
   /* TITLE */
 
   .book-title-page {
-    min-height: 70vh;
+    min-height: 62vh;
 
-    padding: 70px 18px;
+    padding: 56px 16px 64px;
   }
 
   .book-title-page h1 {
-    font-size: clamp(3rem, 15vw, 4.5rem);
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(2.8rem, 13vw, 4rem);
+    line-height: 1;
+  }
+
+  .book-byline {
+    margin-top: 22px;
+  }
+
+  .book-scroll-mark {
+    margin-top: 35px;
   }
 
 
@@ -892,19 +948,24 @@ footer p {
 
   .story-spread,
   .story-spread.reverse {
-    width: calc(100% - 28px);
+    width: calc(100% - 24px);
+    max-width: none;
+    min-height: 0;
 
-    grid-template-columns: 1fr;
+    margin: 0 auto;
 
-    gap: 32px;
+    padding: 46px 0;
 
-    padding: 55px 0;
+    display: flex;
+    flex-direction: column;
+
+    gap: 26px;
   }
 
   /*
-    IMPORTANT:
-    On phone the text comes FIRST,
-    followed by its picture.
+    Explicit mobile reading order:
+    TEXT first, IMAGE second.
+    Using flex avoids Firefox/grid order weirdness.
   */
 
   .story-spread .story-text,
@@ -918,45 +979,55 @@ footer p {
   }
 
 
-  /* MOBILE IMAGES */
-
-  .story-spread img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-
-    object-fit: cover;
-  }
-
-
   /* MOBILE TEXT */
 
   .story-text {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
 
-    padding: 0 6px;
+    padding: 0 4px;
 
-    font-size: clamp(1.3rem, 6vw, 1.65rem);
-    line-height: 1.55;
+    font-size: clamp(1.16rem, 5.6vw, 1.48rem);
+    line-height: 1.5;
   }
 
   .story-text p {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   .story-text.boast {
-    font-size: clamp(1.8rem, 9vw, 2.6rem);
+    font-size: clamp(1.65rem, 8vw, 2.3rem);
+    line-height: 1.28;
+  }
+
+
+  /* MOBILE IMAGE */
+
+  .story-spread img,
+  .story-spread.reverse img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    display: block;
   }
 
 
   /* END PAGE */
 
   .book-end {
-    width: calc(100% - 28px);
+    width: calc(100% - 24px);
 
-    margin: 55px auto 80px;
+    margin: 48px auto 70px;
 
-    padding: 60px 24px;
+    padding: 52px 20px;
+  }
+
+  .book-end h2 {
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
   }
 
 }
@@ -968,25 +1039,16 @@ footer p {
 
 @media (max-width: 400px) {
 
-  .book-nav nav {
-    gap: 10px;
-  }
-
-  .book-nav nav a {
-    font-size: 0.7rem;
-  }
-
   .book-title-page h1 {
-    font-size: 2.9rem;
+    font-size: 2.65rem;
   }
 
   .story-text {
-    font-size: 1.25rem;
+    font-size: 1.14rem;
   }
 
   .story-text.boast {
-    font-size: 1.85rem;
+    font-size: 1.65rem;
   }
 
 }
-
