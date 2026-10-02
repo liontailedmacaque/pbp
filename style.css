@@ -569,3 +569,424 @@ footer p {
     font-size: 2.7rem;
   }
 }
+
+
+
+
+
+/* =========================================================
+   FULL NEBUCHADNEZZAR BOOK PAGE
+   ========================================================= */
+
+.book-page {
+  background: #fbf6ea;
+}
+
+
+/* NAVIGATION */
+
+.book-nav {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 82px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.book-nav nav {
+  display: flex;
+  gap: 28px;
+}
+
+.book-nav nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.book-nav nav a:hover {
+  color: var(--rust);
+}
+
+
+/* TITLE PAGE */
+
+.book-title-page {
+  min-height: 80vh;
+  padding: 100px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.book-kicker {
+  margin: 0 0 20px;
+
+  color: var(--rust);
+
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.book-title-page h1 {
+  max-width: 950px;
+
+  font-size: clamp(3.7rem, 8vw, 8rem);
+  line-height: 0.95;
+}
+
+.book-title-page h1 span {
+  color: var(--rust);
+}
+
+.book-byline {
+  margin-top: 30px;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+}
+
+.book-scroll-mark {
+  margin-top: 55px;
+
+  color: var(--rust);
+
+  font-size: 1.8rem;
+}
+
+
+/* STORY SPREADS */
+
+.story-spread {
+  width: min(1200px, calc(100% - 60px));
+  min-height: 720px;
+
+  margin: 0 auto;
+  padding: 100px 0;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.story-spread.reverse {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.story-spread.reverse .story-text {
+  order: 2;
+}
+
+.story-spread.reverse img {
+  order: 1;
+}
+
+
+/* STORY IMAGES */
+
+.story-spread img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  box-shadow:
+    0 24px 60px rgba(65, 46, 31, 0.16);
+}
+
+
+/* STORY TEXT */
+
+.story-text {
+  max-width: 500px;
+
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 2.5vw, 2.35rem);
+  line-height: 1.55;
+
+  color: var(--ink);
+}
+
+.story-text p {
+  margin: 0 0 30px;
+}
+
+.story-text p:last-child {
+  margin-bottom: 0;
+}
+
+.story-text .big-line {
+  color: var(--rust);
+
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.story-text.boast {
+  color: var(--rust);
+
+  font-size: clamp(2rem, 3.8vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+
+/* ALTERNATING BACKGROUND SECTIONS */
+
+.story-spread:nth-of-type(even) {
+  position: relative;
+}
+
+.story-spread:nth-of-type(even)::before {
+  content: "";
+
+  position: absolute;
+  z-index: -1;
+
+  top: 30px;
+  bottom: 30px;
+
+  left: calc((100vw - 100%) / -2);
+  right: calc((100vw - 100%) / -2);
+
+  background: #fffdf8;
+}
+
+
+/* END PAGE */
+
+.book-end {
+  max-width: 760px;
+
+  margin: 80px auto 120px;
+  padding: 90px 45px;
+
+  text-align: center;
+
+  background: #fffdf8;
+
+  box-shadow:
+    0 18px 50px rgba(64, 46, 31, 0.08);
+}
+
+.book-end h2 {
+  margin: 0 0 32px;
+
+  font-family: var(--serif);
+  font-size: clamp(2.7rem, 5vw, 4.7rem);
+  line-height: 1;
+}
+
+.book-end > p {
+  max-width: 590px;
+  margin: 18px auto;
+
+  color: var(--muted);
+
+  line-height: 1.75;
+}
+
+.book-end .buy-button {
+  margin-top: 30px;
+}
+
+.book-credits {
+  margin-top: 65px;
+  padding-top: 30px;
+
+  border-top: 1px solid rgba(41, 36, 31, 0.15);
+
+  color: #8a8178;
+
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .story-spread,
+  .story-spread.reverse {
+    width: min(88vw, 700px);
+
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    padding: 80px 0;
+  }
+
+  /*
+    On tablet:
+    image first, then text
+  */
+
+  .story-spread .story-text,
+  .story-spread.reverse .story-text {
+    order: 2;
+  }
+
+  .story-spread img,
+  .story-spread.reverse img {
+    order: 1;
+  }
+
+  .story-text {
+    max-width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  /* NAV */
+
+  .book-nav {
+    width: calc(100% - 32px);
+    min-height: 68px;
+  }
+
+  .book-nav nav {
+    gap: 14px;
+  }
+
+  .book-nav nav a {
+    font-size: 0.76rem;
+  }
+
+
+  /* TITLE */
+
+  .book-title-page {
+    min-height: 70vh;
+
+    padding: 70px 18px;
+  }
+
+  .book-title-page h1 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+
+  /* STORY */
+
+  .story-spread,
+  .story-spread.reverse {
+    width: calc(100% - 28px);
+
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+
+    padding: 55px 0;
+  }
+
+  /*
+    IMPORTANT:
+    On phone the text comes FIRST,
+    followed by its picture.
+  */
+
+  .story-spread .story-text,
+  .story-spread.reverse .story-text {
+    order: 1;
+  }
+
+  .story-spread img,
+  .story-spread.reverse img {
+    order: 2;
+  }
+
+
+  /* MOBILE IMAGES */
+
+  .story-spread img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+  }
+
+
+  /* MOBILE TEXT */
+
+  .story-text {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0 6px;
+
+    font-size: clamp(1.3rem, 6vw, 1.65rem);
+    line-height: 1.55;
+  }
+
+  .story-text p {
+    margin-bottom: 24px;
+  }
+
+  .story-text.boast {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+  }
+
+
+  /* END PAGE */
+
+  .book-end {
+    width: calc(100% - 28px);
+
+    margin: 55px auto 80px;
+
+    padding: 60px 24px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .book-nav nav {
+    gap: 10px;
+  }
+
+  .book-nav nav a {
+    font-size: 0.7rem;
+  }
+
+  .book-title-page h1 {
+    font-size: 2.9rem;
+  }
+
+  .story-text {
+    font-size: 1.25rem;
+  }
+
+  .story-text.boast {
+    font-size: 1.85rem;
+  }
+
+}
+
