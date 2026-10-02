@@ -1,0 +1,514 @@
+/* =========================================================
+   A CURIOUS LETTER FROM NEBUCHADNEZZAR
+   ========================================================= */
+
+
+/* PAGE */
+
+.book-page {
+  margin: 0;
+  overflow-x: hidden;
+  background: #fbf6ea;
+  color: var(--ink);
+}
+
+
+/* =========================================================
+   TOP NAVIGATION
+   ========================================================= */
+
+.book-page .book-nav {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 78px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.book-page .book-nav .brand {
+  flex-shrink: 0;
+
+  color: var(--ink);
+  text-decoration: none;
+
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.book-page .book-nav nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.book-page .book-nav nav a {
+  color: var(--ink);
+  text-decoration: none;
+
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.book-page .book-nav nav a:hover {
+  color: var(--rust);
+}
+
+.book-page .top-buy-button {
+  flex-shrink: 0;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  background: var(--rust);
+  color: white;
+
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.book-page .top-buy-button:hover {
+  background: #803426;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.book-page .book-title-page {
+  min-height: 72vh;
+
+  padding: 80px 24px 95px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.book-page .book-kicker {
+  margin: 0 0 18px;
+
+  color: var(--rust);
+
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.book-page .book-title-page h1 {
+  width: 100%;
+  max-width: 950px;
+
+  margin: 0;
+
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 7vw, 6.7rem);
+  font-weight: 600;
+
+  line-height: 0.97;
+  letter-spacing: -0.04em;
+}
+
+.book-page .book-title-page h1 span {
+  color: var(--rust);
+}
+
+.book-page .book-byline {
+  margin: 28px 0 0;
+
+  color: var(--muted);
+
+  font-size: 0.98rem;
+}
+
+.book-page .book-scroll-mark {
+  margin-top: 44px;
+
+  color: var(--rust);
+
+  font-size: 1.5rem;
+}
+
+
+/* =========================================================
+   STORY
+   ========================================================= */
+
+.book-page .story-spread {
+  width: min(1100px, calc(100% - 56px));
+  min-height: 610px;
+
+  margin: 0 auto;
+  padding: 72px 0;
+
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+
+  gap: 68px;
+  align-items: center;
+}
+
+.book-page .story-spread.reverse {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+}
+
+.book-page .story-spread.reverse .story-text {
+  order: 2;
+}
+
+.book-page .story-spread.reverse img {
+  order: 1;
+}
+
+
+/* IMAGE */
+
+.book-page .story-spread img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  box-shadow:
+    0 20px 48px rgba(65, 46, 31, 0.14);
+}
+
+
+/* POEM */
+
+.book-page .story-text {
+  width: 100%;
+  max-width: 450px;
+  min-width: 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(1.15rem, 1.5vw, 1.62rem);
+  line-height: 1.48;
+
+  color: var(--ink);
+}
+
+.book-page .story-text p {
+  margin: 0 0 20px;
+}
+
+.book-page .story-text p:last-child {
+  margin-bottom: 0;
+}
+
+.book-page .story-text .big-line {
+  color: var(--rust);
+
+  font-size: 1.35em;
+  font-weight: 700;
+}
+
+.book-page .story-text.boast {
+  color: var(--rust);
+
+  font-size: clamp(1.5rem, 2.3vw, 2.45rem);
+  line-height: 1.28;
+  font-weight: 600;
+}
+
+
+/* SUBTLE ALTERNATING SECTIONS */
+
+.book-page .story-spread:nth-of-type(even) {
+  position: relative;
+}
+
+.book-page .story-spread:nth-of-type(even)::before {
+  content: "";
+
+  position: absolute;
+  z-index: -1;
+
+  top: 18px;
+  bottom: 18px;
+
+  left: calc((100vw - 100%) / -2);
+  right: calc((100vw - 100%) / -2);
+
+  background: #fffdf8;
+}
+
+
+/* =========================================================
+   END OF BOOK
+   ========================================================= */
+
+.book-page .book-end {
+  width: min(720px, calc(100% - 40px));
+
+  margin: 70px auto 110px;
+  padding: 70px 40px;
+
+  text-align: center;
+
+  background: #fffdf8;
+
+  box-shadow:
+    0 16px 42px rgba(64, 46, 31, 0.08);
+}
+
+.book-page .book-end h2 {
+  margin: 0 0 28px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  line-height: 1.04;
+}
+
+.book-page .book-end > p {
+  max-width: 570px;
+
+  margin: 16px auto;
+
+  color: var(--muted);
+
+  line-height: 1.7;
+}
+
+.book-page .book-end .buy-button {
+  display: inline-block;
+
+  width: auto;
+
+  margin-top: 28px;
+  padding: 14px 24px;
+
+  border-radius: 999px;
+
+  background: var(--rust);
+  color: white;
+
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.book-page .book-credits {
+  margin-top: 58px;
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(41, 36, 31, 0.15);
+
+  color: #8a8178;
+
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .book-page .story-spread,
+  .book-page .story-spread.reverse {
+    width: min(84vw, 650px);
+    min-height: 0;
+
+    padding: 65px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 38px;
+  }
+
+  /* Tablet: image then poem */
+
+  .book-page .story-spread .story-text,
+  .book-page .story-spread.reverse .story-text {
+    order: 2;
+  }
+
+  .book-page .story-spread img,
+  .book-page .story-spread.reverse img {
+    order: 1;
+  }
+
+  .book-page .story-text {
+    max-width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  /* HEADER */
+
+  .book-page .book-nav {
+    width: calc(100% - 28px);
+    min-height: 64px;
+
+    gap: 12px;
+  }
+
+  .book-page .book-nav .brand {
+    font-size: 1.18rem;
+  }
+
+  .book-page .book-nav nav {
+    display: none;
+  }
+
+  .book-page .top-buy-button {
+    padding: 9px 13px;
+
+    font-size: 0.76rem;
+  }
+
+
+  /* TITLE */
+
+  .book-page .book-title-page {
+    min-height: 58vh;
+
+    padding: 55px 16px 65px;
+  }
+
+  .book-page .book-title-page h1 {
+    font-size: clamp(2.7rem, 12.5vw, 3.8rem);
+
+    line-height: 1;
+  }
+
+  .book-page .book-byline {
+    margin-top: 22px;
+  }
+
+  .book-page .book-scroll-mark {
+    margin-top: 34px;
+  }
+
+
+  /* STORY */
+
+  .book-page .story-spread,
+  .book-page .story-spread.reverse {
+    width: calc(100% - 28px);
+    max-width: 520px;
+
+    margin: 0 auto;
+    padding: 44px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+
+  /* PHONE: POEM FIRST, THEN PICTURE */
+
+  .book-page .story-spread .story-text,
+  .book-page .story-spread.reverse .story-text {
+    order: 1;
+  }
+
+  .book-page .story-spread img,
+  .book-page .story-spread.reverse img {
+    order: 2;
+  }
+
+
+  /* TEXT */
+
+  .book-page .story-text {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0 4px;
+
+    font-size: clamp(1.12rem, 5.3vw, 1.42rem);
+
+    line-height: 1.5;
+  }
+
+  .book-page .story-text p {
+    margin-bottom: 18px;
+  }
+
+  .book-page .story-text.boast {
+    font-size: clamp(1.55rem, 7.5vw, 2.2rem);
+
+    line-height: 1.28;
+  }
+
+
+  /* PICTURES */
+
+  .book-page .story-spread img,
+  .book-page .story-spread.reverse img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+
+    object-fit: contain;
+  }
+
+
+  /* END */
+
+  .book-page .book-end {
+    width: calc(100% - 28px);
+
+    margin: 45px auto 70px;
+
+    padding: 50px 20px;
+  }
+
+  .book-page .book-end h2 {
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .book-page .book-title-page h1 {
+    font-size: 2.55rem;
+  }
+
+  .book-page .story-text {
+    font-size: 1.1rem;
+  }
+
+  .book-page .story-text.boast {
+    font-size: 1.55rem;
+  }
+
+}
