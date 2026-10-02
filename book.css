@@ -57,8 +57,13 @@
   color: var(--rust);
 }
 
+
+/* =========================================================
+   BUY BUTTON
+   ========================================================= */
+
 .book-page .top-buy-button {
-  flex-shrink: 0;
+  display: inline-block;
 
   padding: 10px 18px;
 
@@ -76,6 +81,14 @@
 
 .book-page .top-buy-button:hover {
   background: #803426;
+}
+
+/*
+   This is specifically the Buy button beneath
+   "Written and illustrated by John Holden".
+*/
+.book-page .book-title-page .top-buy-button {
+  margin-top: 36px;
 }
 
 
@@ -220,14 +233,18 @@
 
 .book-page .story-text.boast {
   color: var(--rust);
+
   font-size: clamp(1.5rem, 2.3vw, 2.45rem);
   line-height: 1.28;
+
   font-weight: 600;
   font-style: italic;
 }
 
 
-/* SUBTLE ALTERNATING SECTIONS */
+/* =========================================================
+   SUBTLE ALTERNATING SECTIONS
+   ========================================================= */
 
 .book-page .story-spread:nth-of-type(even) {
   position: relative;
@@ -335,7 +352,7 @@
     gap: 38px;
   }
 
-  /* Tablet: image then poem */
+  /* Tablet: image first, then poem */
 
   .book-page .story-spread .story-text,
   .book-page .story-spread.reverse .story-text {
@@ -377,10 +394,16 @@
     display: none;
   }
 
+
+  /* BUY BUTTON */
+
   .book-page .top-buy-button {
     padding: 9px 13px;
-
     font-size: 0.76rem;
+  }
+
+  .book-page .book-title-page .top-buy-button {
+    margin-top: 32px;
   }
 
 
@@ -469,7 +492,6 @@
 
     width: 100%;
     height: auto;
-
     max-width: 100%;
 
     object-fit: contain;
