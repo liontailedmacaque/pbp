@@ -608,19 +608,18 @@ h2 {
 
 
 
-
-
-
-/* BOOKS PAGE */
+/* =========================================================
+   BOOKS PAGE
+   ========================================================= */
 
 .books-page {
   width: min(1080px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 90px 0 120px;
+  padding: 80px 0 120px;
 }
 
 .books-heading {
-  margin-bottom: 55px;
+  margin-bottom: 60px;
 }
 
 .books-heading h1 {
@@ -634,21 +633,30 @@ h2 {
   letter-spacing: -0.04em;
 }
 
+
+/* BOOK */
+
 .book-card {
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
 
-  gap: 70px;
+  gap: 75px;
   align-items: center;
 }
 
 .book-card-cover {
-  display: flex;
-  justify-content: center;
+  width: 100%;
+}
+
+.book-card-cover a {
+  display: block;
 }
 
 .book-card-cover img {
-  width: min(360px, 100%);
+  display: block;
+
+  width: 100%;
+  max-width: 360px;
   height: auto;
 
   box-shadow:
@@ -656,15 +664,18 @@ h2 {
     0 18px 45px rgba(65, 46, 31, 0.12);
 }
 
+
+/* BOOK TEXT */
+
 .book-card-copy {
-  max-width: 620px;
+  max-width: 600px;
 }
 
 .book-card-copy h2 {
   margin: 0;
 
   font-family: var(--serif);
-  font-size: clamp(2.7rem, 4.5vw, 4.5rem);
+  font-size: clamp(2.8rem, 4.5vw, 4.6rem);
   font-weight: 600;
 
   line-height: 1.03;
@@ -677,7 +688,8 @@ h2 {
 
 .book-card-copy p {
   max-width: 540px;
-  margin: 28px 0 30px;
+
+  margin: 28px 0 32px;
 
   color: var(--muted);
 
@@ -685,30 +697,49 @@ h2 {
   line-height: 1.75;
 }
 
+
+/* BUTTONS */
+
 .book-card-buttons {
   display: flex;
   flex-wrap: wrap;
+
   gap: 14px;
 }
+
+
+/* =========================================================
+   BOOKS PAGE — MOBILE
+   ========================================================= */
 
 @media (max-width: 800px) {
 
   .books-page {
     width: calc(100% - 30px);
-    padding: 65px 0 85px;
+    padding: 60px 0 85px;
   }
 
   .books-heading {
-    margin-bottom: 42px;
+    margin-bottom: 45px;
   }
 
   .book-card {
     grid-template-columns: 1fr;
+
     gap: 45px;
+  }
+
+  .book-card-cover {
+    display: flex;
+    justify-content: center;
   }
 
   .book-card-cover img {
     width: min(78vw, 340px);
+  }
+
+  .book-card-copy {
+    max-width: 100%;
   }
 
   .book-card-buttons {
@@ -720,4 +751,3 @@ h2 {
     text-align: center;
   }
 }
-
