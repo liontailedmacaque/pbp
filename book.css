@@ -83,14 +83,6 @@
   background: #803426;
 }
 
-/*
-   This is specifically the Buy button beneath
-   "Written and illustrated by John Holden".
-*/
-.book-page .book-title-page .top-buy-button {
-  margin-top: 36px;
-}
-
 
 /* =========================================================
    TITLE
@@ -139,11 +131,15 @@
 }
 
 .book-page .book-byline {
-  margin: 28px 0 0;
+  margin: 28px 0 40px;
 
   color: var(--muted);
 
   font-size: 0.98rem;
+}
+
+.book-page .book-title-page .top-buy-button {
+  margin-top: 0;
 }
 
 .book-page .book-scroll-mark {
@@ -402,10 +398,6 @@
     font-size: 0.76rem;
   }
 
-  .book-page .book-title-page .top-buy-button {
-    margin-top: 32px;
-  }
-
 
   /* TITLE */
 
@@ -422,7 +414,7 @@
   }
 
   .book-page .book-byline {
-    margin-top: 22px;
+    margin: 22px 0 34px;
   }
 
   .book-page .book-scroll-mark {
