@@ -220,10 +220,10 @@
 
 .book-page .story-text.boast {
   color: var(--rust);
-
   font-size: clamp(1.5rem, 2.3vw, 2.45rem);
   line-height: 1.28;
   font-weight: 600;
+  font-style: italic;
 }
 
 
