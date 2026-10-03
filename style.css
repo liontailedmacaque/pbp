@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Young+Serif&display=swap');
+
 :root {
   --cream: #fbf6ea;
   --paper: #fffdf8;
@@ -7,7 +9,7 @@
   --rust-dark: #803426;
   --yellow: #e6b957;
 
-  --serif: "Fraunces", Georgia, serif;
+  --serif: "Young Serif", Georgia, serif;
   --sans: "DM Sans", Arial, sans-serif;
 }
 
