@@ -89,7 +89,7 @@ h2 {
 }
 
 
-/* BUTTONS */
+/* LEGACY BUTTONS: retained for the 404 page until it is migrated */
 
 .home-primary-button,
 .home-secondary-button {
@@ -130,7 +130,7 @@ h2 {
 }
 
 
-/* SMALL HEADING */
+/* LEGACY KICKER: retained for the 404 page until it is migrated */
 
 .home-kicker {
   margin: 0 0 16px;
@@ -144,55 +144,41 @@ h2 {
 }
 
 
-/* HOMEPAGE HERO */
+/* HOMEPAGE: DISTINCTIVE HERO AND FEATURED LAYOUT */
+/* Shared heading, kicker, book-cover and button styles live below. */
 
 .home-hero {
   width: min(1180px, calc(100% - 56px));
   min-height: 670px;
-
   margin: 0 auto;
   padding: 75px 0 105px;
-
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-
   gap: 80px;
   align-items: center;
 }
 
-.home-hero-copy {
-  min-width: 0;
-}
+.home-hero-copy { min-width: 0; }
 
-.home-hero h1 {
+/* The hero's scale is intentionally different from ordinary page titles. */
+.home-hero .page-title {
   max-width: 700px;
-
   margin: 0;
-
-  font-family: var(--serif);
   font-size: clamp(3.2rem, 5.4vw, 5.6rem);
-  font-weight: 600;
-
   line-height: 1.01;
-  letter-spacing: -0.04em;
 }
 
 .home-intro {
   max-width: 570px;
-
   margin: 28px 0 32px;
-
   color: var(--muted);
-
   font-size: 1.05rem;
   line-height: 1.75;
 }
 
 .home-hero-art {
   position: relative;
-
   min-height: 470px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,42 +186,28 @@ h2 {
 
 .home-hero-circle {
   position: absolute;
-
   width: 390px;
   height: 390px;
   max-width: 90%;
-
   border-radius: 50%;
   background: var(--yellow);
 }
 
 .home-hero-art img {
   position: relative;
-
   width: min(400px, 85%);
   aspect-ratio: 1 / 1;
-
   object-fit: cover;
-
   border: 10px solid var(--paper);
-
-  box-shadow:
-    0 25px 60px rgba(65, 46, 31, 0.18);
-
+  box-shadow: 0 25px 60px rgba(65, 46, 31, 0.18);
   transform: rotate(2deg);
 }
 
-
-/* FEATURED BOOK */
-
 .home-featured-book {
   padding: 110px max(28px, calc((100vw - 1120px) / 2));
-
   background: var(--paper);
-
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-
   gap: 85px;
   align-items: center;
 }
@@ -245,52 +217,24 @@ h2 {
   justify-content: center;
 }
 
-.featured-book-image img {
-  width: min(390px, 100%);
-  height: auto;
+/* The shared .book-cover--featured supplies the book-shadow styling. */
+.featured-book-image .book-cover { width: min(390px, 100%); }
 
-  box-shadow:
-    16px 16px 0 var(--yellow),
-    0 20px 50px rgba(65, 46, 31, 0.12);
-}
+.featured-book-copy { max-width: 610px; }
 
-.featured-book-copy {
-  max-width: 610px;
-}
-
-.featured-book-copy h2 {
-  margin: 0;
-
-  font-family: var(--serif);
+/* Only the featured heading's scale differs from book-listing titles. */
+.featured-book-copy .book-listing__title {
   font-size: clamp(2.8rem, 4.5vw, 4.8rem);
-  font-weight: 600;
-
   line-height: 1.02;
-  letter-spacing: -0.04em;
-}
-
-.featured-book-copy h2 span {
-  color: var(--rust);
 }
 
 .featured-book-description {
   max-width: 540px;
-
   margin: 26px 0 30px;
-
   color: var(--muted);
-
   font-size: 1.03rem;
   line-height: 1.75;
 }
-
-.featured-book-buttons {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 14px;
-}
-
 
 /* FOOTER */
 
@@ -401,7 +345,7 @@ h2 {
     gap: 40px;
   }
 
-  .home-hero h1 {
+  .home-hero .page-title {
     font-size: clamp(2.55rem, 11.5vw, 3.5rem);
 
     line-height: 1.02;
@@ -438,7 +382,7 @@ h2 {
     gap: 46px;
   }
 
-  .featured-book-image img {
+  .featured-book-image .book-cover {
     width: min(78vw, 340px);
 
     box-shadow:
@@ -446,22 +390,12 @@ h2 {
       0 15px 38px rgba(65, 46, 31, 0.1);
   }
 
-  .featured-book-copy h2 {
+  .featured-book-copy .book-listing__title {
     font-size: clamp(2.55rem, 11vw, 3.6rem);
   }
 
   .featured-book-description {
     font-size: 0.98rem;
-  }
-
-  .featured-book-buttons {
-    flex-direction: column;
-  }
-
-  .featured-book-buttons a {
-    width: 100%;
-
-    text-align: center;
   }
 
 
@@ -487,11 +421,11 @@ h2 {
     font-size: 0.73rem;
   }
 
-  .home-hero h1 {
+  .home-hero .page-title {
     font-size: 2.5rem;
   }
 
-  .featured-book-copy h2 {
+  .featured-book-copy .book-listing__title {
     font-size: 2.5rem;
   }
 }
