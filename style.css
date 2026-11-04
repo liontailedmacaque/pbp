@@ -1019,6 +1019,16 @@ h2 {
 }
 
 
+
+
+
+
+
+
+
+
+
+
 /* =========================================
    REUSABLE COMPONENTS
    Use these for new pages across the site.
@@ -1062,5 +1072,269 @@ h2 {
 @media (max-width: 700px) {
   .page {
     padding-block: 50px 75px;
+  }
+}
+
+
+
+
+
+
+/* =========================================
+   REUSABLE BUTTONS
+   ========================================= */
+
+/* Base button style */
+.button {
+  display: inline-block;
+  padding: 14px 23px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+/* Primary button: rust background */
+.button--primary {
+  background: var(--rust);
+  color: white;
+}
+
+.button--primary:hover {
+  background: var(--rust-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Secondary button: outlined */
+.button--secondary {
+  border-color: rgba(41, 36, 31, 0.25);
+  background: transparent;
+  color: var(--ink);
+}
+
+.button--secondary:hover {
+  background: var(--paper);
+  transform: translateY(-2px);
+}
+
+/* Group of buttons */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group .button {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+/* =========================================
+   REUSABLE SECTIONS AND HEADINGS
+   ========================================= */
+
+.section {
+  padding-block: 70px;
+}
+
+.section--paper {
+  background: var(--paper);
+}
+
+.section-title {
+  margin: 0 0 28px;
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+.kicker {
+  margin: 0 0 16px;
+  color: var(--rust);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.lead {
+  max-width: 700px;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   REUSABLE TWO-COLUMN LAYOUT
+   ========================================= */
+
+.split-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 70px;
+  align-items: center;
+}
+
+.split-layout > * {
+  min-width: 0;
+}
+
+/* Add this class to reverse the two columns */
+.split-layout--reverse > :first-child {
+  order: 2;
+}
+
+
+/* =========================================
+   REUSABLE CARDS
+   ========================================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.card {
+  overflow: hidden;
+  background: var(--paper);
+  border-radius: 8px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 28px;
+}
+
+.card-title {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.card-text {
+  margin: 0 0 20px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   REUSABLE IMAGES
+   ========================================= */
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+}
+
+.book-cover {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  box-shadow:
+    14px 14px 0 var(--yellow),
+    0 18px 45px rgba(65, 46, 31, 0.12);
+}
+
+
+/* =========================================
+   SMALL UTILITY CLASSES
+   ========================================= */
+
+.text-center {
+  text-align: center;
+}
+
+.text-center .lead {
+  margin-inline: auto;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.mt-large {
+  margin-top: 80px;
+}
+
+.mb-large {
+  margin-bottom: 80px;
+}
+
+
+/* =========================================
+   RESPONSIVE COMPONENTS
+   ========================================= */
+
+@media (max-width: 900px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .split-layout--reverse > :first-child {
+    order: 0;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding-block: 45px;
+  }
+
+  .card-grid,
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mt-large {
+    margin-top: 50px;
+  }
+
+  .mb-large {
+    margin-bottom: 50px;
   }
 }
