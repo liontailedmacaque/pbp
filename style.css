@@ -508,183 +508,6 @@ h2 {
 
 
 
-
-
-
-
-
-
-
-
-/* =========================================================
-   BOOKS PAGE
-   ========================================================= */
-
-.books-page {
-  width: min(1080px, calc(100% - 40px));
-  margin: 0 auto;
-  padding: 80px 0 120px;
-}
-
-.books-heading {
-  margin-bottom: 60px;
-}
-
-.books-heading h1 {
-  margin: 0;
-
-  font-family: var(--serif);
-  font-size: clamp(3rem, 6vw, 5.2rem);
-  font-weight: 600;
-
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-
-
-/* BOOK */
-
-.book-card {
-  display: grid;
-  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
-
-  gap: 75px;
-  align-items: center;
-}
-
-.book-card-cover {
-  width: 100%;
-}
-
-.book-card-cover a {
-  display: block;
-}
-
-.book-card-cover img {
-  display: block;
-
-  width: 100%;
-  max-width: 360px;
-  height: auto;
-
-  box-shadow:
-    14px 14px 0 var(--yellow),
-    0 18px 45px rgba(65, 46, 31, 0.12);
-}
-
-
-/* BOOK TEXT */
-
-.book-card-copy {
-  max-width: 600px;
-}
-
-.book-card-copy h2 {
-  margin: 0;
-
-  font-family: var(--serif);
-  font-size: clamp(2.8rem, 4.5vw, 4.6rem);
-  font-weight: 600;
-
-  line-height: 1.03;
-  letter-spacing: -0.04em;
-}
-
-.book-card-copy h2 span {
-  color: var(--rust);
-}
-
-.book-card-copy p {
-  max-width: 540px;
-
-  margin: 28px 0 32px;
-
-  color: var(--muted);
-
-  font-size: 1.03rem;
-  line-height: 1.75;
-}
-
-
-/* BUTTONS */
-
-.book-card-buttons {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 14px;
-}
-
-
-/* =========================================================
-   BOOKS PAGE — MOBILE
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-  .books-page {
-    width: calc(100% - 30px);
-    padding: 60px 0 85px;
-  }
-
-  .books-heading {
-    margin-bottom: 45px;
-  }
-
-  .book-card {
-    grid-template-columns: 1fr;
-
-    gap: 45px;
-  }
-
-  .book-card-cover {
-    display: flex;
-    justify-content: center;
-  }
-
-  .book-card-cover img {
-    width: min(78vw, 340px);
-  }
-
-  .book-card-copy {
-    max-width: 100%;
-  }
-
-  .book-card-buttons {
-    flex-direction: column;
-  }
-
-  .book-card-buttons a {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================================
    NEBUCHADNEZZAR BOOK PAGE
    ========================================================= */
@@ -1245,14 +1068,6 @@ h2 {
   }
 }
 
-
-
-
-
-
-
-
-
 /* =========================================
    REUSABLE CONTENT PAGE COMPONENTS
    ========================================= */
@@ -1263,7 +1078,7 @@ h2 {
   padding-block: 100px 120px;
 }
 
-/* Match the tighter heading used on content pages */
+/* Tighter headings on narrow content pages */
 .page--narrow .page-title {
   line-height: 1;
 }
@@ -1330,6 +1145,111 @@ h2 {
   }
 }
 
+/* =========================================
+   REUSABLE BOOK CATALOGUE / BOOK LISTINGS
+   These classes can be used on any future
+   catalogue or publication listing page.
+   ========================================= */
 
+/* Width and spacing for a book catalogue page */
+.page--catalogue {
+  width: min(1080px, calc(100% - 40px));
+  padding-block: 80px 120px;
+}
 
+.page-heading {
+  margin-bottom: 60px;
+}
+
+.page-heading .page-title {
+  margin: 0;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  line-height: 1;
+}
+
+/* A book cover beside its title, description and actions */
+.book-listing {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  gap: 75px;
+  align-items: center;
+}
+
+.book-listing__cover {
+  width: 100%;
+}
+
+.book-listing__cover a {
+  display: block;
+}
+
+/* The image inherits the standard .book-cover shadow */
+.book-listing__cover .book-cover {
+  width: 100%;
+  max-width: 360px;
+}
+
+.book-listing__content {
+  max-width: 600px;
+}
+
+.book-listing__title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 4.5vw, 4.6rem);
+  font-weight: 600;
+  line-height: 1.03;
+  letter-spacing: -0.04em;
+}
+
+.text-rust {
+  color: var(--rust);
+}
+
+.book-listing__description {
+  max-width: 540px;
+  margin: 28px 0 32px;
+  color: var(--muted);
+  font-size: 1.03rem;
+  line-height: 1.75;
+}
+
+/* The existing Books page stacks its layout at 800px. */
+@media (max-width: 800px) {
+  .page--catalogue {
+    width: calc(100% - 30px);
+    padding-block: 60px 85px;
+  }
+
+  .page-heading {
+    margin-bottom: 45px;
+  }
+
+  .book-listing {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .book-listing__cover {
+    display: flex;
+    justify-content: center;
+  }
+
+  .book-listing__cover .book-cover {
+    width: min(78vw, 340px);
+  }
+
+  .book-listing__content {
+    max-width: 100%;
+  }
+
+  .button-group--book-listing {
+    flex-direction: column;
+  }
+
+  .button-group--book-listing .button {
+    width: 100%;
+    text-align: center;
+  }
+}
 
