@@ -3,17 +3,11 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Playful Bible</title>
-
-  <meta
-    name="description"
-    content="Beautiful children's books to encourage lifelong exploration of the Bible."
-  >
+  <meta name="description" content="Beautiful children's books to encourage lifelong exploration of the Bible.">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -22,134 +16,67 @@
   <link rel="icon" href="/favicon.ico">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- Main stylesheet -->
+  <!-- Shared stylesheet also loads the site fonts -->
   <link rel="stylesheet" href="/style.css">
 </head>
-
-
 <body>
-
   {% include header.html %}
 
-
   <main>
-
-
-    <!-- HERO -->
-
+    <!-- Homepage hero: unique artwork layout, shared typography and button -->
     <section class="home-hero">
-
       <div class="home-hero-copy">
-
-        <p class="home-kicker">
-          Playful Bible Press
-        </p>
-
-        <h1>
+        <p class="kicker">Playful Bible Press</p>
+        <h1 class="page-title">
           Beautiful children’s books to encourage lifelong exploration of the Bible.
         </h1>
-
-        <p class="home-intro">
-          Fun to look at, fun to read, and faithful to the Bible text.
-        </p>
-
-        <a
-          class="home-primary-button"
-          href="/books/"
-        >
-          Explore the books
-        </a>
-
+        <p class="home-intro">Fun to look at, fun to read, and faithful to the Bible text.</p>
+        <a class="button button--primary" href="/books/">Explore the books</a>
       </div>
 
-
       <div class="home-hero-art">
-
         <div class="home-hero-circle"></div>
-
         <img
           src="/images/neb/7.jpg"
           alt="Illustration from A Curious Letter from Nebuchadnezzar"
           fetchpriority="high"
         >
-
       </div>
-
     </section>
 
-
-
-    <!-- FEATURED BOOK -->
-
+    <!-- Featured book: shared book title, cover, button and text components -->
     <section class="home-featured-book">
-
       <div class="featured-book-image">
-
         <a href="/books/nebuchadnezzar/">
           <img
+            class="book-cover book-cover--featured"
             src="/images/neb/cover.png"
             alt="Cover of A Curious Letter from Nebuchadnezzar"
             loading="lazy"
             decoding="async"
           >
         </a>
-
       </div>
 
-
       <div class="featured-book-copy">
-
-        <p class="home-kicker">
-          Featured book
-        </p>
-
-        <h2>
+        <p class="kicker">Featured book</p>
+        <h2 class="book-listing__title">
           A Curious Letter<br>
-          <span>from Nebuchadnezzar</span>
+          <span class="text-rust">from Nebuchadnezzar</span>
         </h2>
-
         <p class="featured-book-description">
           King Nebuchadnezzar learns a lesson in pride.
           A rhyming retelling of Daniel chapter 4, brought to life with watercolour illustrations.
         </p>
-
-        <div class="featured-book-buttons">
-
-          <a
-            class="home-primary-button"
-            href="/books/nebuchadnezzar/"
-          >
-            Learn more
-          </a>
-
-          <a
-            class="home-secondary-button"
-            href="/books/nebuchadnezzar/read/"
-          >
-            Read online
-          </a>
-
+        <div class="button-group">
+          <a class="button button--primary" href="/books/nebuchadnezzar/">Learn more</a>
+          <a class="button button--secondary" href="/books/nebuchadnezzar/read/">Read online</a>
         </div>
-
       </div>
-
     </section>
-
-
   </main>
 
-
   {% include footer.html %}
-
 </body>
-
 </html>
+
