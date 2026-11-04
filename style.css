@@ -89,61 +89,6 @@ h2 {
 }
 
 
-/* LEGACY BUTTONS: retained for the 404 page until it is migrated */
-
-.home-primary-button,
-.home-secondary-button {
-  display: inline-block;
-
-  padding: 14px 23px;
-  border-radius: 999px;
-
-  text-decoration: none;
-  font-size: 0.92rem;
-  font-weight: 600;
-
-  transition:
-    transform 0.18s ease,
-    background 0.18s ease;
-}
-
-.home-primary-button {
-  background: var(--rust);
-  color: white;
-}
-
-.home-primary-button:hover {
-  background: var(--rust-dark);
-  transform: translateY(-2px);
-}
-
-.home-secondary-button {
-  border: 1px solid rgba(41, 36, 31, 0.25);
-
-  background: transparent;
-  color: var(--ink);
-}
-
-.home-secondary-button:hover {
-  background: var(--paper);
-  transform: translateY(-2px);
-}
-
-
-/* LEGACY KICKER: retained for the 404 page until it is migrated */
-
-.home-kicker {
-  margin: 0 0 16px;
-
-  color: var(--rust);
-
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.17em;
-  text-transform: uppercase;
-}
-
-
 /* HOMEPAGE: DISTINCTIVE HERO AND FEATURED LAYOUT */
 /* Shared heading, kicker, book-cover and button styles live below. */
 
@@ -431,17 +376,6 @@ h2 {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================
    REUSABLE COMPONENTS
    Use these for new pages across the site.
@@ -487,10 +421,6 @@ h2 {
     padding-block: 50px 75px;
   }
 }
-
-
-
-
 
 
 /* =========================================
@@ -558,11 +488,6 @@ h2 {
     width: 100%;
   }
 }
-
-
-
-
-
 
 
 /* =========================================
@@ -933,7 +858,6 @@ h2 {
 
   .button-group--book-listing .button {
     width: 100%;
-    text-align: center;
   }
 }
 
