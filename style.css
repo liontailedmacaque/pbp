@@ -1017,3 +1017,50 @@ h2 {
     width: 100%;
   }
 }
+
+
+/* =========================================
+   REUSABLE COMPONENTS
+   Use these for new pages across the site.
+   ========================================= */
+
+/* Standard page container */
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+/* Standard page spacing */
+.page {
+  padding-block: 80px 110px;
+}
+
+/* Standard page heading */
+.page-title {
+  margin: 0 0 36px;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 6vw, 5.4rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+/* Standard body text */
+.prose {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* Standard vertical spacing between paragraphs */
+.prose p {
+  margin: 0 0 1.5em;
+}
+
+/* Mobile adjustments */
+@media (max-width: 700px) {
+  .page {
+    padding-block: 50px 75px;
+  }
+}
