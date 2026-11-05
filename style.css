@@ -10,6 +10,27 @@
   --yellow: #e6b957;
   --serif: "Young Serif", Georgia, serif;
   --sans: "DM Sans", Arial, sans-serif;
+  /* Typography scale — edit sizes here, not in page selectors. */
+  --type-body: 1.05rem;
+  --type-body-compact: 1.03rem;
+  --type-body-mobile: 0.98rem;
+  --type-lead: 1.15rem;
+  --type-page-title: clamp(3rem, 6vw, 5.4rem);
+  --type-section-title: clamp(2.2rem, 4vw, 3.8rem);
+  --type-book-title: clamp(2.8rem, 4.5vw, 4.6rem);
+  --type-book-title-featured: clamp(2.8rem, 4.5vw, 4.8rem);
+  --type-book-title-mobile: clamp(1.75rem, 7.5vw, 2.45rem);
+  --type-hero-title: clamp(2.7rem, 4.5vw, 4.7rem);
+  --type-hero-title-mobile: clamp(2.3rem, 10vw, 3.1rem);
+  --type-book-detail-title: clamp(3rem, 5.2vw, 5.3rem);
+  --type-catalogue-title: clamp(3rem, 6vw, 5.2rem);
+  --type-content-section-title: clamp(2.5rem, 4vw, 4rem);
+  --type-message-title: clamp(3.5rem, 7vw, 6rem);
+  --type-serif-lead: clamp(1.4rem, 2.4vw, 1.95rem);
+  --type-quote: clamp(1.1rem, 2vw, 1.4rem);
+  --type-kicker: 0.76rem;
+  --type-button: 0.92rem;
+
 }
 
 /* GLOBAL */
@@ -72,7 +93,7 @@ h2 {
 .featured-book-description,
 .book-listing__description {
   max-width: 540px;
-  font-size: 1.03rem;
+  font-size: var(--type-body-compact);
   line-height: 1.75;
 }
 
@@ -144,14 +165,14 @@ h2 {
 .home-hero .page-title {
   max-width: 700px;
   margin: 0;
-  font-size: clamp(2.7rem, 4.5vw, 4.7rem);
+  font-size: var(--type-hero-title);
   line-height: 1.01;
 }
 
 .home-intro {
   max-width: 570px;
   margin: 28px 0 32px;
-  font-size: 1.05rem;
+  font-size: var(--type-body);
   line-height: 1.75;
 }
 
@@ -203,7 +224,7 @@ h2 {
 }
 
 .featured-book-copy .book-listing__title {
-  font-size: clamp(2.8rem, 4.5vw, 4.8rem);
+  font-size: var(--type-book-title-featured);
   line-height: 1.02;
 }
 
@@ -244,7 +265,7 @@ h2 {
 
 .site-footer .copyright {
   color: #aaa198;
-  font-size: 0.76rem;
+  font-size: var(--type-kicker);
 }
 
 /* TABLET */
@@ -300,13 +321,13 @@ h2 {
   }
 
   .home-hero .page-title {
-  font-size: clamp(2.3rem, 10vw, 3.1rem);
+  font-size: var(--type-hero-title-mobile);
   line-height: 1.02;
   }
 
   .home-intro {
   margin-top: 23px;
-  font-size: 0.98rem;
+  font-size: var(--type-body-mobile);
   line-height: 1.65;
   }
 
@@ -337,11 +358,11 @@ h2 {
   }
 
   .featured-book-copy .book-listing__title {
-  font-size: clamp(1.75rem, 7.5vw, 2.45rem);
+  font-size: var(--type-book-title-mobile);
   }
 
   .featured-book-description {
-  font-size: 0.98rem;
+  font-size: var(--type-body-mobile);
   }
 
   .site-footer {
@@ -386,13 +407,13 @@ h2 {
 
 .page-title {
   margin: 0 0 36px;
-  font-size: clamp(3rem, 6vw, 5.4rem);
+  font-size: var(--type-page-title);
   line-height: 1.08;
 }
 
 .prose {
   max-width: 760px;
-  font-size: 1.05rem;
+  font-size: var(--type-body);
   line-height: 1.8;
 }
 
@@ -414,7 +435,7 @@ h2 {
   border: 1px solid transparent;
   border-radius: 999px;
   font-family: var(--sans);
-  font-size: 0.92rem;
+  font-size: var(--type-button);
   font-weight: 600;
   line-height: 1.6;
   text-align: center;
@@ -472,7 +493,7 @@ h2 {
 
 .section-title {
   margin: 0 0 28px;
-  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-size: var(--type-section-title);
   font-weight: 400;
   line-height: 1.12;
   letter-spacing: -0.035em;
@@ -481,7 +502,7 @@ h2 {
 .kicker {
   margin: 0 0 16px;
   color: var(--rust);
-  font-size: 0.76rem;
+  font-size: var(--type-kicker);
   font-weight: 600;
   letter-spacing: 0.17em;
   text-transform: uppercase;
@@ -489,7 +510,7 @@ h2 {
 
 .lead {
   max-width: 700px;
-  font-size: 1.15rem;
+  font-size: var(--type-lead);
   line-height: 1.75;
 }
 
@@ -637,7 +658,7 @@ h2 {
   max-width: 760px;
   margin: 0 0 26px;
   color: var(--ink);
-  font-size: clamp(1.4rem, 2.4vw, 1.95rem);
+  font-size: var(--type-serif-lead);
   line-height: 1.5;
 }
 
@@ -664,7 +685,7 @@ h2 {
   padding: 34px 38px;
   border-left: 5px solid var(--yellow);
   background: var(--paper);
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-size: var(--type-quote);
   font-style: italic;
   line-height: 1.7;
 }
@@ -701,7 +722,7 @@ h2 {
 
 .page-heading .page-title {
   margin: 0;
-  font-size: clamp(3rem, 6vw, 5.2rem);
+  font-size: var(--type-catalogue-title);
   line-height: 1;
 }
 
@@ -729,7 +750,7 @@ h2 {
 
 .book-listing__title {
   margin: 0;
-  font-size: clamp(2.8rem, 4.5vw, 4.6rem);
+  font-size: var(--type-book-title);
   line-height: 1.03;
 }
 
@@ -771,7 +792,7 @@ h2 {
 
   /* Keep long book titles within narrow phone screens. */
   .book-listing__title {
-    font-size: clamp(1.75rem, 7.5vw, 2.45rem);
+    font-size: var(--type-book-title-mobile);
   }
 
   .button-group--book-listing {
@@ -800,8 +821,8 @@ h2 {
 
 .book-detail__title {
   margin: 0;
-  font-size: clamp(1.75rem, 3.4vw, 3.5rem);
-  line-height: 1.08;
+  font-size: var(--type-book-detail-title);
+  line-height: 1;
 }
 
 .book-cover--featured {
@@ -813,7 +834,7 @@ h2 {
 .book-detail__description {
   max-width: 560px;
   margin: 28px 0 32px;
-  font-size: 1.05rem;
+  font-size: var(--type-body);
   line-height: 1.75;
 }
 
@@ -835,13 +856,13 @@ h2 {
 }
 
 .book-detail__about .section-title {
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: var(--type-content-section-title);
   font-weight: 600;
   line-height: 1.05;
 }
 
 .book-detail__about .prose {
-  font-size: 1.03rem;
+  font-size: var(--type-body-compact);
 }
 
 @media (max-width: 900px) {
@@ -867,7 +888,7 @@ h2 {
   }
 
   .book-detail__title {
-  font-size: clamp(1.75rem, 7.5vw, 2.45rem);
+  font-size: var(--type-book-title-mobile);
   }
 
   .button-group--book-detail {
@@ -905,13 +926,13 @@ h2 {
 
 .page--centred-message .page-title {
   margin: 0;
-  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-size: var(--type-message-title);
   line-height: 1;
 }
 
 .page--centred-message .lead {
   margin: 28px auto 34px;
-  font-size: 1.05rem;
+  font-size: var(--type-body);
   line-height: 1.7;
 }
 
@@ -926,4 +947,3 @@ h2 {
   padding-block: 80px;
   }
 }
-
