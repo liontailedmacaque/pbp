@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | escape }}</title>
+  <meta name="description" content="{{ page.description | escape }}">
+
+  {% include favicons.html %}
+
+  <!-- All site fonts are imported by the shared stylesheet. -->
+  <link rel="stylesheet" href="/style.css">
+  {% if page.extra_css %}
+  <link rel="stylesheet" href="{{ page.extra_css | relative_url }}">
+  {% endif %}
+</head>
+<body{% if page.body_class %} class="{{ page.body_class | escape }}"{% endif %}>
+  {% include header.html %}
+  <main>
+    {{ content }}
+  </main>
+  {% include footer.html %}
+</body>
+</html>
+
