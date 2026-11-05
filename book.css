@@ -6,7 +6,7 @@
 
 .book-page {
   /* Reader typography: change these here for all illustrated readers. */
-  --reader-title-size: clamp(3.5rem, 7vw, 6.7rem);
+  --reader-title-size: clamp(2.5rem, 5vw, 4.5rem);
   --reader-poem-size: clamp(1.15rem, 1.5vw, 1.62rem);
   --reader-boast-size: clamp(1.5rem, 2.3vw, 2.45rem);
   --reader-end-title-size: clamp(2.4rem, 4.5vw, 4rem);
@@ -191,7 +191,7 @@
     --reader-end-title-size: clamp(2.2rem, 10vw, 3.2rem);
   }
   .book-page .top-buy-button { padding: 9px 13px; font-size: 0.76rem; }
-  .book-page .book-title-page { min-height: 58vh; padding: 55px 16px 65px; }
+  .book-page .book-title-page { min-height: 0; padding: 55px 16px 25px; }
   .book-page .book-title-page h1 { line-height: 1; }
   .book-page .book-byline { margin: 22px 0 34px; }
   .book-page .book-scroll-mark { margin-top: 34px; }
@@ -240,3 +240,4 @@
     --reader-boast-size: 1.55rem;
   }
 }
+
