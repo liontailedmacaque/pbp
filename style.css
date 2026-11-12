@@ -332,7 +332,7 @@ h2 {
   }
 
   .home-hero-art {
-  min-height: 330px;
+   display: none;
   }
 
   .home-hero-circle {
