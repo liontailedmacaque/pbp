@@ -978,3 +978,13 @@ h2 {
   background: transparent;
 }
 
+
+
+
+
+footer a,
+footer a:visited {
+  color: #fff;
+  text-decoration: underline;
+}
+
