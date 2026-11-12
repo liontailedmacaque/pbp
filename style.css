@@ -982,14 +982,14 @@ h2 {
 /* HYPERLINKS */
 
 /* Ordinary text links */
-a:not([class]):not(.site-nav a),
-a:not([class]):not(.site-nav a):visited {
+a:not([class]):not(.site-nav a):not(.site-footer a),
+a:not([class]):not(.site-nav a):not(.site-footer a):visited {
   color: var(--rust);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-a:not([class]):not(.site-nav a):hover {
+a:not([class]):not(.site-nav a):not(.site-footer a):hover {
   color: var(--rust-dark);
 }
 
@@ -1007,8 +1007,8 @@ a:not([class]):not(.site-nav a):hover {
 /* Footer links */
 .site-footer a,
 .site-footer a:visited {
-  color: #fff;
-  text-decoration: underline;
+  color: #eee8df;
+  text-decoration: none;
 }
 
 .site-footer a:hover {
