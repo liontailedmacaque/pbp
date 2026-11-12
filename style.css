@@ -980,11 +980,27 @@ h2 {
 
 
 
+/* HYPERLINKS */
 
+/* Ordinary text links */
+a:not([class]),
+a:not([class]):visited {
+  color: var(--rust);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
-footer a,
-footer a:visited {
+a:not([class]):hover {
+  color: var(--rust-dark);
+}
+
+/* Footer links */
+.site-footer a,
+.site-footer a:visited {
   color: #fff;
   text-decoration: underline;
 }
 
+.site-footer a:hover {
+  color: var(--yellow);
+}
