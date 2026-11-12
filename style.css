@@ -979,19 +979,29 @@ h2 {
 }
 
 
-
 /* HYPERLINKS */
 
 /* Ordinary text links */
-a:not([class]),
-a:not([class]):visited {
+a:not([class]):not(.site-nav a),
+a:not([class]):not(.site-nav a):visited {
   color: var(--rust);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-a:not([class]):hover {
+a:not([class]):not(.site-nav a):hover {
   color: var(--rust-dark);
+}
+
+/* Header navigation links */
+.site-nav a,
+.site-nav a:visited {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--rust);
 }
 
 /* Footer links */
