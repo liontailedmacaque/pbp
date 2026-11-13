@@ -1,3 +1,4 @@
+
 /* =========================================================
    PLAYFUL BIBLE PRESS — ILLUSTRATED BOOK READER
    Loaded after style.css. Reusable for future illustrated books.
@@ -5,12 +6,11 @@
    ========================================================= */
 
 .book-page {
-  /* Reader typography: change these here for all illustrated readers. */
+  /* Reader-specific typography */
   --reader-title-size: clamp(2.5rem, 5vw, 4.5rem);
   --reader-poem-size: clamp(1.15rem, 1.5vw, 1.62rem);
   --reader-boast-size: clamp(1.5rem, 2.3vw, 2.45rem);
   --reader-end-title-size: clamp(2.4rem, 4.5vw, 4rem);
-  --reader-kicker-size: 0.76rem;
 
   margin: 0;
   overflow-x: hidden;
@@ -18,15 +18,15 @@
   color: var(--ink);
 }
 
-/* PURCHASE LINKS: base shape, colour and hover come from
-   .button.button--primary in the shared stylesheet. */
+/* PURCHASE LINKS
+   Main button styling comes from style.css. */
 .book-page .top-buy-button {
   padding: 10px 18px;
   font-size: 0.84rem;
   white-space: nowrap;
 }
 
-/* TITLE */
+/* TITLE PAGE */
 .book-page .book-title-page {
   min-height: 72vh;
   padding: 80px 24px 95px;
@@ -36,14 +36,12 @@
   justify-content: center;
   text-align: center;
 }
-.book-page .book-kicker {
-  margin: 0 0 18px;
-  color: var(--rust);
-  font-size: var(--reader-kicker-size);
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+
+/* Uses shared .kicker styling from style.css */
+.book-page .book-title-page .kicker {
+  margin-bottom: 18px;
 }
+
 .book-page .book-title-page h1 {
   width: 100%;
   max-width: 950px;
@@ -54,20 +52,24 @@
   line-height: 0.97;
   letter-spacing: -0.04em;
 }
-.book-page .book-title-page h1 span { color: var(--rust); }
+
+.book-page .book-title-page h1 span {
+  color: var(--rust);
+}
+
 .book-page .book-byline {
   margin: 28px 0 40px;
   color: var(--muted);
   font-size: 0.98rem;
 }
-.book-page .book-title-page .top-buy-button { margin-top: 0; }
+
 .book-page .book-scroll-mark {
   margin-top: 44px;
   color: var(--rust);
   font-size: 1.5rem;
 }
 
-/* STORY: alternating text/image layout */
+/* STORY: ALTERNATING TEXT AND IMAGE */
 .book-page .story-spread {
   width: min(1100px, calc(100% - 56px));
   min-height: 610px;
@@ -78,13 +80,20 @@
   gap: 68px;
   align-items: center;
 }
+
 .book-page .story-spread.reverse {
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
 }
-.book-page .story-spread.reverse .story-text { order: 2; }
-.book-page .story-spread.reverse img { order: 1; }
+
+.book-page .story-spread.reverse .story-text {
+  order: 2;
+}
+
+.book-page .story-spread.reverse img {
+  order: 1;
+}
+
 .book-page .story-spread img {
-  display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -101,13 +110,21 @@
   line-height: 1.48;
   color: var(--ink);
 }
-.book-page .story-text p { margin: 0 0 20px; }
-.book-page .story-text p:last-child { margin-bottom: 0; }
+
+.book-page .story-text p {
+  margin: 0 0 20px;
+}
+
+.book-page .story-text p:last-child {
+  margin-bottom: 0;
+}
+
 .book-page .story-text .big-line {
   color: var(--rust);
   font-size: 1.35em;
   font-weight: 700;
 }
+
 .book-page .story-text.boast {
   color: var(--rust);
   font-size: var(--reader-boast-size);
@@ -116,8 +133,11 @@
   font-style: italic;
 }
 
-/* SUBTLE ALTERNATING SECTIONS */
-.book-page .story-spread:nth-of-type(even) { position: relative; }
+/* SUBTLE ALTERNATING SECTION BACKGROUNDS */
+.book-page .story-spread:nth-of-type(even) {
+  position: relative;
+}
+
 .book-page .story-spread:nth-of-type(even)::before {
   content: "";
   position: absolute;
@@ -138,23 +158,36 @@
   background: var(--paper);
   box-shadow: 0 16px 42px rgba(64, 46, 31, 0.08);
 }
+
+.book-page .book-end .kicker {
+  margin-bottom: 16px;
+}
+
 .book-page .book-end h2 {
   margin: 0 0 28px;
   font-family: var(--serif);
   font-size: var(--reader-end-title-size);
   line-height: 1.04;
+
+  /* Keep long book-title words intact */
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
 }
+
 .book-page .book-end > p {
   max-width: 570px;
   margin: 16px auto;
   color: var(--muted);
   line-height: 1.7;
 }
+
 .book-page .book-end .buy-button {
   width: auto;
   margin-top: 28px;
   padding: 14px 24px;
 }
+
 .book-page .book-credits {
   margin-top: 58px;
   padding-top: 28px;
@@ -164,7 +197,7 @@
   line-height: 1.7;
 }
 
-/* TABLET: image first, then poem */
+/* TABLET: IMAGE FIRST, THEN POEM */
 @media (max-width: 950px) {
   .book-page .story-spread,
   .book-page .story-spread.reverse {
@@ -175,26 +208,55 @@
     flex-direction: column;
     gap: 38px;
   }
+
   .book-page .story-spread .story-text,
-  .book-page .story-spread.reverse .story-text { order: 2; }
+  .book-page .story-spread.reverse .story-text {
+    order: 2;
+  }
+
   .book-page .story-spread img,
-  .book-page .story-spread.reverse img { order: 1; }
-  .book-page .story-text { max-width: 100%; }
+  .book-page .story-spread.reverse img {
+    order: 1;
+  }
+
+  .book-page .story-text {
+    max-width: 100%;
+  }
 }
 
-/* PHONE: poem first, then picture */
+/* PHONE: POEM FIRST, THEN PICTURE */
 @media (max-width: 700px) {
   .book-page {
     --reader-title-size: clamp(2.7rem, 12.5vw, 3.8rem);
     --reader-poem-size: clamp(1.12rem, 5.3vw, 1.42rem);
     --reader-boast-size: clamp(1.55rem, 7.5vw, 2.2rem);
-    --reader-end-title-size: clamp(2.2rem, 10vw, 3.2rem);
+
+    /* Smaller ending title for long words */
+    --reader-end-title-size: clamp(1.5rem, 6vw, 2rem);
   }
-  .book-page .top-buy-button { padding: 9px 13px; font-size: 0.76rem; }
-  .book-page .book-title-page { min-height: 0; padding: 55px 16px 25px; }
-  .book-page .book-title-page h1 { line-height: 1; }
-  .book-page .book-byline { margin: 22px 0 34px; }
-  .book-page .book-scroll-mark { margin-top: 34px; }
+
+  .book-page .top-buy-button {
+    padding: 9px 13px;
+    font-size: 0.76rem;
+  }
+
+  .book-page .book-title-page {
+    min-height: 0;
+    padding: 55px 16px 25px;
+  }
+
+  .book-page .book-title-page h1 {
+    line-height: 1;
+  }
+
+  .book-page .book-byline {
+    margin: 22px 0 34px;
+  }
+
+  .book-page .book-scroll-mark {
+    margin-top: 34px;
+  }
+
   .book-page .story-spread,
   .book-page .story-spread.reverse {
     width: calc(100% - 28px);
@@ -205,26 +267,32 @@
     flex-direction: column;
     gap: 25px;
   }
+
   .book-page .story-spread .story-text,
-  .book-page .story-spread.reverse .story-text { order: 1; }
+  .book-page .story-spread.reverse .story-text {
+    order: 1;
+  }
+
   .book-page .story-spread img,
-  .book-page .story-spread.reverse img { order: 2; }
+  .book-page .story-spread.reverse img {
+    order: 2;
+  }
+
   .book-page .story-text {
     width: 100%;
     max-width: 100%;
     padding: 0 4px;
     line-height: 1.5;
   }
-  .book-page .story-text p { margin-bottom: 18px; }
-  .book-page .story-text.boast { line-height: 1.28; }
-  .book-page .story-spread img,
-  .book-page .story-spread.reverse img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    object-fit: contain;
+
+  .book-page .story-text p {
+    margin-bottom: 18px;
   }
+
+  .book-page .story-text.boast {
+    line-height: 1.28;
+  }
+
   .book-page .book-end {
     width: calc(100% - 28px);
     margin: 45px auto 70px;
