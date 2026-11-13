@@ -1,0 +1,41 @@
+---
+layout: default
+title: Contact | Playful Bible Press
+description: Get in touch with Playful Bible Press.
+permalink: /contact/
+---
+
+<section class="container page page--narrow">
+  <h1 class="page-title">Contact</h1>
+
+  <p class="lead lead--serif">
+    We'd love to hear from you.
+  </p>
+
+  <div class="prose prose--spacious">
+    <p>
+      Whether you have a question about our books,
+      some feedback, or just want to say hello,
+      please get in touch.
+    </p>
+
+    <p>
+      Email us at
+      <span id="contact-email">contact [at] playfulbible.com</span>.
+    </p>
+  </div>
+</section>
+
+<script>
+  // Assemble the email address to deter simple spam bots.
+  const user = "contact";
+  const domain = ["playfulbible", "com"].join(".");
+  const address = user + "@" + domain;
+
+  const link = document.createElement("a");
+  link.href = "mailto:" + address;
+  link.textContent = address;
+
+  document.getElementById("contact-email").replaceChildren(link);
+</script>
+
